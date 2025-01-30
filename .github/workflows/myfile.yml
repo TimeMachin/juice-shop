@@ -1,0 +1,16 @@
+name: My Custom Workflow
+
+on:
+  push:
+    branches:
+      - master  # O la rama que prefieras
+
+jobs:
+  build:
+    runs-on: self-hosted  # Aquí se asigna el trabajo al agente autoalojado
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: Run custom build
+        run: echo "Running my custom build script!"
